@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hintergrund -->
+  <circle cx="200" cy="200" r="180" fill="#e0f7fa" />
+  
+  <!-- Eisbecher -->
+  <path d="M150 260 L250 260 L270 360 L130 360 Z" fill="#f5e0c2" stroke="#d4a76a" stroke-width="3" />
+  
+  <!-- Eiskugeln -->
+  <circle cx="165" cy="180" r="40" fill="#ffadad" stroke="#ff6b6b" stroke-width="2" /> <!-- Erdbeereis -->
+  <circle cx="200" cy="145" r="40" fill="#fdffb6" stroke="#ffd166" stroke-width="2" /> <!-- Vanilleeis -->
+  <circle cx="235" cy="180" r="40" fill="#a0c4ff" stroke="#4d96ff" stroke-width="2" /> <!-- Blaubeereis -->
+  
+  <!-- Eiswaffel-Textur im Becher -->
+  <path d="M150 260 L170 290 M170 260 L190 290 M190 260 L210 290 M210 260 L230 290 M230 260 L250 290" 
+        stroke="#d4a76a" stroke-width="2" fill="none" />
+  
+  <!-- Frost-/Schnee-Effekt -->
+  <circle cx="150" cy="150" r="5" fill="white" />
+  <circle cx="260" cy="130" r="4" fill="white" />
+  <circle cx="170" cy="110" r="6" fill="white" />
+  <circle cx="230" cy="120" r="3" fill="white" />
+  <circle cx="280" cy="180" r="4" fill="white" />
+  <circle cx="120" cy="180" r="5" fill="white" />
+  
+  <!-- Kirsche -->
+  <circle cx="200" cy="100" r="12" fill="#ff0000" />
+  <path d="M200 100 Q205 80 215 70" stroke="#006400" stroke-width="2" fill="none" />
+  
+  <!-- Schriftzug "FROSTY" -->
+  <text x="200" cy="310" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" fill="#0277bd">FROSTY</text>
+  
+  <!-- Schriftzug "Eisdiele" -->
+  <text x="200" cy="340" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#039be5">Eisdiele</text>
+  
+  <!-- Glanz-Effekte auf den Eiskugeln -->
+  <circle cx="155" cy="170" r="8" fill="white" opacity="0.7" />
+  <circle cx="190" cy="135" r="8" fill="white" opacity="0.7" />
+  <circle cx="225" cy="170" r="8" fill="white" opacity="0.7" />
+  
+  <!-- Kleine Schneeflocken -->
+  <g fill="white">
+    <path d="M120 220 L130 230 M125 220 L125 230 M120 225 L130 225" stroke="white" stroke-width="1.5" />
+    <path d="M270 220 L280 230 M275 220 L275 230 M270 225 L280 225" stroke="white" stroke-width="1.5" />
+    <path d="M160 90 L170 100 M165 90 L165 100 M160 95 L170 95" stroke="white" stroke-width="1.5" />
+    <path d="M240 90 L250 100 M245 90 L245 100 M240 95 L250 95" stroke="white" stroke-width="1.5" />
+  </g>
+</svg>

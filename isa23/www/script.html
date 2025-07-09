@@ -1,0 +1,155 @@
+k<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eisdiele Frosty - Startseite</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.svg" alt="Eismanufaktur Logo">
+                    <span>Eismanufaktur</span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="ueber_uns.html">Über uns</a></li>
+                    <li><a href="eis_projekt.html">Projekt</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="impressum.html">Impressum</a></li>
+                </ul>
+                <div class="burger-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <section class="container center">
+            <h1>DOM-Manipulation & Mehrwertsteuerrechner</h1>
+            <p>Interaktive Aufgaben rund um JavaScript und DOM</p>
+        </section>
+
+        <section class="container">
+            <h2>Neue Überschrift hinzufügen</h2>
+            <button id="addHeadingBtn" class="btn primary-btn">Neue Überschrift</button>
+            <div id="headingContainer" style="margin-top: 1rem;"></div>
+        </section>
+
+        <section class="container">
+            <h2>Liste erweitern</h2>
+            <ul id="myList" class="section-intro">
+                <li>Eintrag 1</li>
+                <li>Eintrag 2</li>
+            </ul>
+            <button id="addItemBtn" class="btn secondary-btn">Listeneintrag hinzufügen</button>
+        </section>
+
+        <section class="container">
+            <h2>Eingabe anzeigen</h2>
+            <input type="text" id="myInput" placeholder="Gib etwas ein..." class="input-field">
+            <button id="showInputBtn" class="btn primary-btn">Anzeigen</button>
+            <p id="output" style="margin-top: 1rem; font-weight: bold;"></p>
+        </section>
+
+        <section class="container">
+            <h2>Mehrwertsteuer-Rechner</h2>
+            <input type="number" id="nettoInput" placeholder="Nettobetrag (€)" step="0.01" class="input-field">
+            <select id="taxRate" class="input-field">
+                <option value="19">19% (Standard)</option>
+                <option value="7">7% (ermäßigt)</option>
+            </select>
+            <button id="calcMwstBtn" class="btn secondary-btn">Berechnen</button>
+            <p id="mwstOutput" style="margin-top: 1rem; font-weight: bold;"></p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Eismanufaktur</h3>
+                    <p>Handgemachtes Eis aus besten Zutaten seit 2023.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="ueber_uns.html">Über uns</a></li>
+                        <li><a href="eis_projekt.html">Projekt</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Kontakt</h3>
+                    <p>Eisallee 42<br>12345 Frosthausen<br>info@eismanufaktur.de</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Eismanufaktur - Ein Lernprojekt</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        // Aufgabe 1: Neue Überschrift
+        document.getElementById('addHeadingBtn').addEventListener('click', function() {
+            const newHeading = document.createElement('h2');
+            newHeading.textContent = 'Das ist eine neue Überschrift!';
+            document.getElementById('headingContainer').appendChild(newHeading);
+        });
+
+        // Aufgabe 2: Liste erweitern
+        let listCounter = 3;
+        document.getElementById('addItemBtn').addEventListener('click', function() {
+            const newItem = document.createElement('li');
+            newItem.textContent = 'Eintrag ' + listCounter;
+            document.getElementById('myList').appendChild(newItem);
+            listCounter++;
+        });
+
+        // Aufgabe 3: Eingabewert anzeigen
+        document.getElementById('showInputBtn').addEventListener('click', function() {
+            const inputValue = document.getElementById('myInput').value;
+            document.getElementById('output').textContent = 'Du hast eingegeben: ' + inputValue;
+        });
+
+        // Mehrwertsteuer-Rechner
+        document.getElementById('calcMwstBtn').addEventListener('click', function() {
+            const netto = parseFloat(document.getElementById('nettoInput').value);
+            const taxRate = parseFloat(document.getElementById('taxRate').value);
+
+            if (isNaN(netto) || netto <= 0) {
+                document.getElementById('mwstOutput').textContent = 'Bitte gib einen gültigen Nettobetrag ein.';
+                return;
+            }
+
+            const mwst = netto * taxRate / 100;
+            const brutto = netto + mwst;
+
+            document.getElementById('mwstOutput').textContent = 
+                `Mehrwertsteuer (${taxRate}%): ${mwst.toFixed(2)} € | Bruttobetrag: ${brutto.toFixed(2)} €`;
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
